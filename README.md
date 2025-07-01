@@ -48,6 +48,7 @@ Selamat datang di **Personal Web & Admin Dashboard**, sebuah website multifungsi
 ---
 
 ## 📂 Struktur Folder
+```
 📁 personal-web/
 ├── 📁 admin/
 │ ├── about.php
@@ -82,7 +83,7 @@ Selamat datang di **Personal Web & Admin Dashboard**, sebuah website multifungsi
 ├── index.php
 ├── koneksi.php
 └── README.md
-
+```
 
 ---
 
