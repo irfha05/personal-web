@@ -42,13 +42,15 @@ if (!isset($_SESSION['username'])) {
     <!-- Header -->
     <header class="relative bg-blue-900 dark:bg-gray-800 text-white text-center py-6 shadow">
         <h1 class="text-3xl font-bold">Tambah Artikel Baru</h1>
-        <button onclick="toggleDarkMode()" class="absolute right-6 top-6 text-white hover:scale-110 transition" title="Toggle Theme">
+        <button onclick="toggleDarkMode()" class="absolute right-6 top-6 text-white hover:scale-110 transition"
+            title="Toggle Theme">
             <!-- Moon icon -->
             <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 fill-current" viewBox="0 0 24 24">
                 <path d="M21 12.79A9 9 0 0111.21 3a7 7 0 1010 9.79z" />
             </svg>
             <!-- Sun icon -->
-            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 fill-current hidden" viewBox="0 0 24 24">
+            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 fill-current hidden"
+                viewBox="0 0 24 24">
                 <path
                     d="M12 4.75a.75.75 0 01.75-.75h.5a.75.75 0 010 1.5h-.5A.75.75 0 0112 4.75zM12 18.25a.75.75 0 01.75.75h-.5a.75.75 0 010-1.5h.5a.75.75 0 01-.75.75zM4.75 12a.75.75 0 01-.75.75v-.5a.75.75 0 011.5 0v.5A.75.75 0 014.75 12zM18.25 12a.75.75 0 01.75.75v-.5a.75.75 0 01-1.5 0v.5a.75.75 0 01.75-.75zM7.03 7.03a.75.75 0 01.53-.22.75.75 0 01.53 1.28l-.35.35a.75.75 0 11-1.06-1.06l.35-.35zM16.97 16.97a.75.75 0 01.53-.22.75.75 0 01.53 1.28l-.35.35a.75.75 0 11-1.06-1.06l.35-.35zM16.97 7.03a.75.75 0 011.06 1.06l-.35.35a.75.75 0 11-1.06-1.06l.35-.35zM7.03 16.97a.75.75 0 011.06 1.06l-.35.35a.75.75 0 11-1.06-1.06l.35-.35zM12 8a4 4 0 100 8 4 4 0 000-8z" />
             </svg>
@@ -61,7 +63,8 @@ if (!isset($_SESSION['username'])) {
             <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4 text-center">MENU</h2>
             <ul class="space-y-2 text-gray-700 dark:text-gray-200">
                 <li><a href="beranda_admin.php" class="block hover:text-blue-500">Beranda</a></li>
-                <li><a href="data_artikel.php" class="block font-semibold text-blue-800 dark:text-blue-300">Kelola Artikel</a></li>
+                <li><a href="data_artikel.php" class="block font-semibold text-blue-800 dark:text-blue-300">Kelola
+                        Artikel</a></li>
                 <li><a href="data_gallery.php" class="block hover:text-blue-500">Kelola Gallery</a></li>
                 <li><a href="about.php" class="block hover:text-blue-500">About</a></li>
                 <li>
@@ -73,17 +76,58 @@ if (!isset($_SESSION['username'])) {
 
         <!-- Main Content -->
         <main class="w-3/4 bg-white dark:bg-gray-800 rounded shadow p-6">
-            <form action="proses_add_artikel.php" method="post" class="space-y-6">
+            <!-- Tambahkan ini di dalam <form> -->
+            <form action="proses_add_artikel.php" method="post" enctype="multipart/form-data" class="space-y-6">
+                <!-- Judul Artikel -->
                 <div>
-                    <label for="nama_artikel" class="block text-sm font-medium mb-1 dark:text-gray-300">Judul Artikel</label>
+                    <label for="nama_artikel" class="block text-sm font-medium mb-1 dark:text-gray-300">Judul
+                        Artikel</label>
                     <input type="text" id="nama_artikel" name="nama_artikel" required
-                        class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-500 dark:bg-gray-900 dark:border-gray-700 dark:text-white">
+                        class="w-full p-2 border rounded dark:bg-gray-900 dark:border-gray-700 dark:text-white">
                 </div>
+
+                <!-- Isi Artikel -->
                 <div>
-                    <label for="isi_artikel" class="block text-sm font-medium mb-1 dark:text-gray-300">Isi Artikel</label>
+                    <label for="isi_artikel" class="block text-sm font-medium mb-1 dark:text-gray-300">Isi
+                        Artikel</label>
                     <textarea id="isi_artikel" name="isi_artikel" rows="5" required
-                        class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-500 dark:bg-gray-900 dark:border-gray-700 dark:text-white"></textarea>
+                        class="w-full p-2 border rounded dark:bg-gray-900 dark:border-gray-700 dark:text-white"></textarea>
                 </div>
+
+                <!-- Nama Penulis -->
+                <div>
+                    <label for="nama_penulis" class="block text-sm font-medium mb-1 dark:text-gray-300">Nama
+                        Penulis</label>
+                    <input type="text" id="nama_penulis" name="nama_penulis" required
+                        class="w-full p-2 border rounded dark:bg-gray-900 dark:border-gray-700 dark:text-white">
+                </div>
+
+                <!-- Tanggal Publish -->
+                <div>
+                    <label for="tanggal_publish" class="block text-sm font-medium mb-1 dark:text-gray-300">Tanggal
+                        Publish</label>
+                    <input type="date" id="tanggal_publish" name="tanggal_publish" required
+                        class="w-full p-2 border rounded dark:bg-gray-900 dark:border-gray-700 dark:text-white">
+                </div>
+
+                <!-- Tag Artikel -->
+                <div>
+                    <label for="tag_artikel" class="block text-sm font-medium mb-1 dark:text-gray-300">Tag
+                        Artikel</label>
+                    <input type="text" id="tag_artikel" name="tag_artikel"
+                        class="w-full p-2 border rounded dark:bg-gray-900 dark:border-gray-700 dark:text-white"
+                        placeholder="Contoh: pendidikan, motivasi">
+                </div>
+
+                <!-- Gambar Artikel -->
+                <div>
+                    <label for="gambar_artikel" class="block text-sm font-medium mb-1 dark:text-gray-300">Gambar
+                        Artikel</label>
+                    <input type="file" id="gambar_artikel" name="gambar_artikel" accept="image/*"
+                        class="w-full p-2 border rounded dark:bg-gray-900 dark:border-gray-700 dark:text-white">
+                </div>
+
+                <!-- Tombol -->
                 <div class="flex justify-end space-x-4">
                     <button type="submit"
                         class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition">Simpan</button>

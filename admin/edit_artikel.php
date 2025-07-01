@@ -2,8 +2,8 @@
 include('../koneksi.php');
 session_start();
 if (!isset($_SESSION['username'])) {
-    header('location:login.php');
-    exit;
+  header('location:login.php');
+  exit;
 }
 $id = $_GET['id_artikel'];
 $sql = "SELECT * FROM tbl_artikel WHERE id_artikel = '$id'";
@@ -12,6 +12,7 @@ $data = mysqli_fetch_array($query);
 ?>
 <!DOCTYPE html>
 <html lang="en" class="transition-colors duration-300">
+
 <head>
   <meta charset="UTF-8">
   <title>Edit Artikel</title>
@@ -37,69 +38,112 @@ $data = mysqli_fetch_array($query);
     };
   </script>
 </head>
+
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen font-sans">
 
-<!-- Header -->
-<header class="relative bg-blue-900 dark:bg-gray-800 text-white text-center py-6 shadow">
-  <h1 class="text-3xl font-bold">Edit Artikel</h1>
-  <button onclick="toggleDarkMode()" class="absolute right-6 top-6 hover:scale-110 transition" title="Toggle Theme">
-    <!-- Moon Icon -->
-    <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 fill-current" viewBox="0 0 24 24">
-      <path d="M21 12.79A9 9 0 0111.21 3a7 7 0 1010 9.79z" />
-    </svg>
-    <!-- Sun Icon -->
-    <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 fill-current hidden" viewBox="0 0 24 24">
-      <path
-        d="M12 4.75a.75.75 0 01.75-.75h.5a.75.75 0 010 1.5h-.5A.75.75 0 0112 4.75zM12 18.25a.75.75 0 01.75.75h-.5a.75.75 0 010-1.5h.5a.75.75 0 01-.75.75zM4.75 12a.75.75 0 01-.75.75v-.5a.75.75 0 011.5 0v.5A.75.75 0 014.75 12zM18.25 12a.75.75 0 01.75.75v-.5a.75.75 0 01-1.5 0v.5a.75.75 0 01.75-.75zM7.03 7.03a.75.75 0 01.53-.22.75.75 0 01.53 1.28l-.35.35a.75.75 0 11-1.06-1.06l.35-.35zM16.97 16.97a.75.75 0 01.53-.22.75.75 0 01.53 1.28l-.35.35a.75.75 0 11-1.06-1.06l.35-.35zM16.97 7.03a.75.75 0 011.06 1.06l-.35.35a.75.75 0 11-1.06-1.06l.35-.35zM7.03 16.97a.75.75 0 011.06 1.06l-.35.35a.75.75 0 11-1.06-1.06l.35-.35zM12 8a4 4 0 100 8 4 4 0 000-8z" />
-    </svg>
-  </button>
-</header>
+  <!-- Header -->
+  <header class="relative bg-blue-900 dark:bg-gray-800 text-white text-center py-6 shadow">
+    <h1 class="text-3xl font-bold">Edit Artikel</h1>
+    <button onclick="toggleDarkMode()" class="absolute right-6 top-6 hover:scale-110 transition" title="Toggle Theme">
+      <!-- Moon Icon -->
+      <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 fill-current" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 0111.21 3a7 7 0 1010 9.79z" />
+      </svg>
+      <!-- Sun Icon -->
+      <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 fill-current hidden" viewBox="0 0 24 24">
+        <path
+          d="M12 4.75a.75.75 0 01.75-.75h.5a.75.75 0 010 1.5h-.5A.75.75 0 0112 4.75zM12 18.25a.75.75 0 01.75.75h-.5a.75.75 0 010-1.5h.5a.75.75 0 01-.75.75zM4.75 12a.75.75 0 01-.75.75v-.5a.75.75 0 011.5 0v.5A.75.75 0 014.75 12zM18.25 12a.75.75 0 01.75.75v-.5a.75.75 0 01-1.5 0v.5a.75.75 0 01.75-.75zM7.03 7.03a.75.75 0 01.53-.22.75.75 0 01.53 1.28l-.35.35a.75.75 0 11-1.06-1.06l.35-.35zM16.97 16.97a.75.75 0 01.53-.22.75.75 0 01.53 1.28l-.35.35a.75.75 0 11-1.06-1.06l.35-.35zM16.97 7.03a.75.75 0 011.06 1.06l-.35.35a.75.75 0 11-1.06-1.06l.35-.35zM7.03 16.97a.75.75 0 011.06 1.06l-.35.35a.75.75 0 11-1.06-1.06l.35-.35zM12 8a4 4 0 100 8 4 4 0 000-8z" />
+      </svg>
+    </button>
+  </header>
 
-<div class="flex max-w-7xl mx-auto mt-8 px-4 gap-6">
-  <!-- Sidebar -->
-  <aside class="w-1/4 bg-white dark:bg-gray-800 rounded shadow p-6">
-    <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4 text-center">MENU</h2>
-    <ul class="space-y-2 text-gray-700 dark:text-gray-200">
-      <li><a href="beranda_admin.php" class="block hover:text-blue-500">Beranda</a></li>
-      <li><a href="data_artikel.php" class="block font-semibold text-blue-800 dark:text-blue-300">Kelola Artikel</a></li>
-      <li><a href="data_gallery.php" class="block hover:text-blue-500">Kelola Gallery</a></li>
-      <li><a href="about.php" class="block hover:text-blue-500">About</a></li>
-      <li>
-        <a href="logout.php" onclick="return confirm('Apakah anda yakin ingin keluar?');"
-           class="block text-red-600 hover:underline font-medium">Logout</a>
-      </li>
-    </ul>
-  </aside>
+  <div class="flex max-w-7xl mx-auto mt-8 px-4 gap-6">
+    <!-- Sidebar -->
+    <aside class="w-1/4 bg-white dark:bg-gray-800 rounded shadow p-6">
+      <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4 text-center">MENU</h2>
+      <ul class="space-y-2 text-gray-700 dark:text-gray-200">
+        <li><a href="beranda_admin.php" class="block hover:text-blue-500">Beranda</a></li>
+        <li><a href="data_artikel.php" class="block font-semibold text-blue-800 dark:text-blue-300">Kelola Artikel</a>
+        </li>
+        <li><a href="data_gallery.php" class="block hover:text-blue-500">Kelola Gallery</a></li>
+        <li><a href="about.php" class="block hover:text-blue-500">About</a></li>
+        <li>
+          <a href="logout.php" onclick="return confirm('Apakah anda yakin ingin keluar?');"
+            class="block text-red-600 hover:underline font-medium">Logout</a>
+        </li>
+      </ul>
+    </aside>
 
-  <!-- Main Content -->
-  <main class="w-3/4 bg-white dark:bg-gray-800 rounded shadow p-6">
-    <form action="proses_edit_artikel.php" method="post" class="space-y-6">
-      <input type="hidden" name="id_artikel" value="<?php echo $data['id_artikel']; ?>">
-      <div>
-        <label for="nama_artikel" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Judul Artikel</label>
-        <input type="text" id="nama_artikel" name="nama_artikel" required
-               value="<?php echo htmlspecialchars($data['nama_artikel']); ?>"
-               class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-500 bg-white dark:bg-gray-700 dark:text-white">
-      </div>
-      <div>
-        <label for="isi_artikel" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Isi Artikel</label>
-        <textarea id="isi_artikel" name="isi_artikel" rows="6" required
-                  class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-500 bg-white dark:bg-gray-700 dark:text-white"><?php echo htmlspecialchars($data['isi_artikel']); ?></textarea>
-      </div>
-      <div class="flex justify-end space-x-4">
-        <button type="submit"
-                class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition">Update</button>
-        <a href="data_artikel.php"
-           class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-100 px-4 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-600 transition">Batal</a>
-      </div>
-    </form>
-  </main>
-</div>
+    <!-- Main Content -->
+    <main class="w-3/4 bg-white dark:bg-gray-800 rounded shadow p-6">
+      <form action="proses_edit_artikel.php" method="post" enctype="multipart/form-data" class="space-y-6">
+        <input type="hidden" name="id_artikel" value="<?php echo $data['id_artikel']; ?>">
 
-<!-- Footer -->
-<footer class="bg-blue-800 dark:bg-gray-800 text-white text-center py-4 mt-10">
-  &copy; <?php echo date('Y'); ?> | Created by Irfha Najla Qisti Asfia`u Romadlon
-</footer>
+        <!-- Judul Artikel -->
+        <div>
+          <label for="nama_artikel" class="block mb-1">Judul Artikel</label>
+          <input type="text" id="nama_artikel" name="nama_artikel" required
+            value="<?php echo htmlspecialchars($data['nama_artikel']); ?>"
+            class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white">
+        </div>
+
+        <!-- Isi Artikel -->
+        <div>
+          <label for="isi_artikel" class="block mb-1">Isi Artikel</label>
+          <textarea id="isi_artikel" name="isi_artikel" rows="5" required
+            class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white"><?php echo htmlspecialchars($data['isi_artikel']); ?></textarea>
+        </div>
+
+        <!-- Nama Penulis -->
+        <div>
+          <label for="nama_penulis" class="block mb-1">Nama Penulis</label>
+          <input type="text" id="nama_penulis" name="nama_penulis" required
+            value="<?php echo htmlspecialchars($data['nama_penulis']); ?>"
+            class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white">
+        </div>
+
+        <!-- Tanggal Publish -->
+        <div>
+          <label for="tanggal_publish" class="block mb-1">Tanggal Publish</label>
+          <input type="date" id="tanggal_publish" name="tanggal_publish" required
+            value="<?php echo htmlspecialchars($data['tanggal_publish']); ?>"
+            class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white">
+        </div>
+
+        <!-- Tag Artikel -->
+        <div>
+          <label for="tag_artikel" class="block mb-1">Tag Artikel</label>
+          <input type="text" id="tag_artikel" name="tag_artikel"
+            value="<?php echo htmlspecialchars($data['tag_artikel']); ?>"
+            class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white">
+        </div>
+
+        <!-- Gambar Lama + Upload Baru -->
+        <div>
+          <p class="mb-2">Gambar Sekarang:</p>
+          <img src="../images/<?php echo $data['gambar_artikel']; ?>" alt="Gambar Artikel"
+            class="h-32 rounded shadow mb-4">
+          <label for="gambar_artikel" class="block mb-1">Ganti Gambar (opsional):</label>
+          <input type="file" name="gambar_artikel" id="gambar_artikel" accept="image/*"
+            class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white">
+        </div>
+
+        <!-- Tombol -->
+        <div class="flex justify-end space-x-4">
+          <button type="submit"
+            class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition">Update</button>
+          <a href="data_artikel.php"
+            class="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded">Batal</a>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-blue-800 dark:bg-gray-800 text-white text-center py-4 mt-10">
+    &copy; <?php echo date('Y'); ?> | Created by Irfha Najla Qisti Asfia`u Romadlon
+  </footer>
 
 </body>
+
 </html>

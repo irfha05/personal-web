@@ -42,7 +42,8 @@ if (!isset($_SESSION['username'])) {
   <!-- Header -->
   <header class="relative bg-blue-900 dark:bg-gray-800 text-white text-center py-6 shadow">
     <h1 class="text-3xl font-bold">// HALAMAN ADMIN //</h1>
-    <button onclick="toggleDarkMode()" class="absolute right-6 top-6 text-white hover:scale-110 transition" title="Toggle Theme">
+    <button onclick="toggleDarkMode()" class="absolute right-6 top-6 text-white hover:scale-110 transition"
+      title="Toggle Theme">
       <!-- Moon icon -->
       <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 fill-current" viewBox="0 0 24 24">
         <path d="M21 12.79A9 9 0 0111.21 3a7 7 0 1010 9.79z" />
@@ -61,7 +62,8 @@ if (!isset($_SESSION['username'])) {
       <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4 text-center">MENU</h2>
       <ul class="space-y-2 text-gray-700 dark:text-gray-200">
         <li><a href="beranda_admin.php" class="block hover:text-blue-500">Beranda</a></li>
-        <li><a href="data_artikel.php" class="block font-semibold text-blue-800 dark:text-blue-300">Kelola Artikel</a></li>
+        <li><a href="data_artikel.php" class="block font-semibold text-blue-800 dark:text-blue-300">Kelola Artikel</a>
+        </li>
         <li><a href="data_gallery.php" class="block hover:text-blue-500">Kelola Gallery</a></li>
         <li><a href="about.php" class="block hover:text-blue-500">About</a></li>
         <li><a href="logout.php" onclick="return confirm('Apakah anda yakin ingin keluar?');"
@@ -73,8 +75,8 @@ if (!isset($_SESSION['username'])) {
     <main class="w-3/4 bg-white dark:bg-gray-800 rounded shadow p-6">
       <div class="flex justify-between items-center mb-6">
         <h2 class="text-xl font-bold text-gray-800 dark:text-white">Daftar Artikel</h2>
-        <a href="add_artikel.php"
-          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">+ Tambah Artikel</a>
+        <a href="add_artikel.php" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">+ Tambah
+          Artikel</a>
       </div>
 
       <div class="overflow-auto rounded shadow border border-gray-300 dark:border-gray-700">
@@ -83,7 +85,11 @@ if (!isset($_SESSION['username'])) {
             <tr>
               <th class="p-3 border">No</th>
               <th class="p-3 border">Nama Artikel</th>
+              <th class="p-3 border">Gambar</th>
               <th class="p-3 border">Isi Artikel</th>
+              <th class="p-3 border">Penulis</th>
+              <th class="p-3 border">Tag</th>
+              <th class="p-3 border">Tanggal</th>
               <th class="p-3 border text-center">Aksi</th>
             </tr>
           </thead>
@@ -96,7 +102,19 @@ if (!isset($_SESSION['username'])) {
               echo "<tr class='even:bg-gray-50 dark:even:bg-gray-800'>";
               echo "<td class='border p-2 text-center'>" . $no++ . "</td>";
               echo "<td class='border p-2'>" . htmlspecialchars($data['nama_artikel']) . "</td>";
+              echo "<td class='border px-4 py-2 text-center align-middle'>";
+              if (!empty($data['gambar_artikel']) && file_exists("../images/" . $data['gambar_artikel'])) {
+                echo "<div class='flex justify-center'>";
+                echo "<img src='../images/" . htmlspecialchars($data['gambar_artikel']) . "' alt='Gambar Artikel' class='w-20 h-auto'>";
+                echo "</div>";
+              } else {
+                echo "Tidak ada gambar";
+              }
+              echo "</td>";
               echo "<td class='border p-2'>" . htmlspecialchars($data['isi_artikel']) . "</td>";
+              echo "<td class='border p-2'>" . htmlspecialchars($data['nama_penulis']) . "</td>";
+              echo "<td class='border p-2'>" . htmlspecialchars($data['tag_artikel']) . "</td>";
+              echo "<td class='border p-2'>" . htmlspecialchars($data['tanggal_publish']) . "</td>";
               echo "<td class='border p-2 text-center space-x-2'>
                 <a href='edit_artikel.php?id_artikel={$data['id_artikel']}' class='text-blue-600 hover:underline'>Edit</a>
                 <a href='delete_artikel.php?id_artikel={$data['id_artikel']}' onclick='return confirm(\"Yakin ingin menghapus?\")' class='text-red-600 hover:underline'>Hapus</a>
