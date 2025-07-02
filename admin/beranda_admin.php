@@ -64,7 +64,7 @@ $data = array_reverse($data);
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen font-sans">
 
-<header class="relative bg-blue-900 dark:bg-gray-800 text-white text-center py-6 shadow">
+<header class="relative bg-fuchsia-900 dark:bg-gray-800 text-white text-center py-6 shadow">
     <h1 class="text-3xl font-bold">Halaman Administrator</h1>
     <button onclick="toggleDarkMode()" class="absolute right-6 top-6 text-white hover:scale-110 transition"
             title="Toggle Theme">
@@ -119,7 +119,7 @@ $data = array_reverse($data);
     </main>
 </div>
 
-<footer class="bg-blue-800 dark:bg-gray-800 text-white text-center py-4 mt-10 shadow-inner">
+<footer class="bg-fuchsia-800 dark:bg-gray-800 text-white text-center py-4 mt-10 shadow-inner">
     &copy; <?php echo date('Y'); ?> | Created by Irfha Najla Qisti Asfia`u Romadlon
 </footer>
 

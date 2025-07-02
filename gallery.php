@@ -33,7 +33,7 @@
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-all duration-300">
 
     <!-- Header -->
-    <header class="relative bg-blue-900 dark:bg-gray-800 text-white text-center p-6 text-2xl font-bold shadow">
+    <header class="relative bg-rose-900 dark:bg-gray-800 text-white text-center p-6 text-2xl font-bold shadow">
         Gallery | Irfha Najla Qisti Asfia`u Romadlon
         <!-- Dark mode toggle button -->
         <button onclick="toggleDarkMode()" class="absolute right-6 top-6 text-white hover:scale-110 transition"
@@ -52,7 +52,7 @@
     </header>
 
     <!-- Navigation -->
-    <nav class="bg-blue-700 dark:bg-gray-700 text-white py-3 shadow">
+    <nav class="bg-rose-700 dark:bg-gray-700 text-white py-3 shadow">
         <ul class="flex justify-center space-x-8 font-medium text-lg">
             <li><a href="index.php" class="hover:underline">Artikel</a></li>
             <li><a href="gallery.php" class="hover:underline">Gallery</a></li>
@@ -72,7 +72,7 @@
                 echo "<div class='bg-white dark:bg-gray-800 rounded shadow overflow-hidden transform hover:scale-105 transition duration-300'>";
                 echo "<img src='images/{$data['foto']}' class='w-full h-48 object-cover' alt='Gambar'>";
                 echo "<div class='p-4'>";
-                echo "<h3 class='text-lg font-semibold text-blue-700 dark:text-blue-400'>" . htmlspecialchars($data['judul']) . "</h3>";
+                echo "<h3 class='text-lg font-semibold text-fuchsia-700 dark:text-blue-400'>" . htmlspecialchars($data['judul']) . "</h3>";
                 echo "</div></div>";
             }
             ?>
@@ -80,7 +80,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-blue-800 dark:bg-gray-800 text-white text-center py-4 mt-10 shadow-inner">
+    <footer class="bg-rose-800 dark:bg-gray-800 text-white text-center py-4 mt-10 shadow-inner">
         &copy; <?php echo date('Y'); ?> | Created by Irfha Najla Qisti Asfia`u Romadlon
     </footer>
 

@@ -60,7 +60,7 @@ $query = mysqli_query($db, $sql);
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-all duration-300">
 
-    <header class="relative bg-blue-900 dark:bg-gray-800 text-white text-center p-6 text-2xl font-bold shadow">
+    <header class="relative bg-red-900 dark:bg-gray-800 text-white text-center p-6 text-2xl font-bold shadow">
         Personal Web | Irfha Najla Qisti Asfia`u Romadlon
         <button onclick="toggleDarkMode()" class="absolute right-6 top-6 text-white hover:scale-110 transition" title="Toggle Theme">
             <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 fill-current" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@ $query = mysqli_query($db, $sql);
         </button>
     </header>
 
-    <nav class="bg-blue-700 dark:bg-gray-700 text-white py-3 shadow">
+    <nav class="bg-red-700 dark:bg-gray-700 text-white py-3 shadow">
         <ul class="flex justify-center space-x-8 font-medium text-lg">
             <li><a href="index.php" class="hover:underline">Artikel</a></li>
             <li><a href="gallery.php" class="hover:underline">Gallery</a></li>
@@ -172,7 +172,7 @@ $query = mysqli_query($db, $sql);
         </aside>
     </main>
 
-    <footer class="bg-blue-800 dark:bg-gray-800 text-white text-center py-4 mt-10 shadow-inner">
+    <footer class="bg-red-800 dark:bg-gray-800 text-white text-center py-4 mt-10 shadow-inner">
         &copy; <?php echo date('Y'); ?> | Created by Irfha Najla Qisti Asfia`u Romadlon
     </footer>
 </body>
