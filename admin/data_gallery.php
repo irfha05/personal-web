@@ -39,7 +39,7 @@ if (!isset($_SESSION['username'])) {
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen font-sans">
 
 <!-- Header -->
-<header class="relative bg-blue-900 dark:bg-gray-800 text-white text-center py-6 shadow">
+<header class="relative bg-sky-800 dark:bg-gray-800 text-white text-center py-6 shadow">
   <h1 class="text-3xl font-bold">Kelola Gallery</h1>
   <button onclick="toggleDarkMode()" class="absolute right-6 top-6 text-white hover:scale-110 transition" title="Toggle Theme">
     <!-- Moon icon -->
@@ -56,8 +56,8 @@ if (!isset($_SESSION['username'])) {
 
 <div class="flex max-w-7xl mx-auto mt-8 px-4 gap-6">
   <!-- Sidebar -->
-  <aside class="w-1/4 bg-white dark:bg-gray-800 rounded shadow p-6">
-    <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4 text-center">MENU</h2>
+  <aside class="w-1/4 bg-sky-200 dark:bg-gray-800 rounded shadow p-6">
+    <h2 class="text-xl font-semibold text-yellow-700 dark:text-blue-400 mb-4 text-center">MENU</h2>
     <ul class="space-y-2 text-gray-700 dark:text-gray-200">
       <li><a href="beranda_admin.php" class="block hover:text-blue-500">Beranda</a></li>
       <li><a href="data_artikel.php" class="block hover:text-blue-500">Kelola Artikel</a></li>
@@ -71,10 +71,10 @@ if (!isset($_SESSION['username'])) {
   </aside>
 
   <!-- Main Content -->
-  <main class="w-3/4 bg-white dark:bg-gray-800 rounded shadow p-6">
+  <main class="w-3/4 bg-sky-200 dark:bg-gray-800 rounded shadow p-6">
     <div class="flex justify-between items-center mb-6">
-      <h2 class="text-xl font-bold text-gray-800 dark:text-white">Daftar Gallery</h2>
-      <a href="add_gallery.php" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">+ Tambah Gambar</a>
+      <h2 class="text-xl font-bold text-sky-800 dark:text-white">Daftar Gallery</h2>
+      <a href="add_gallery.php" class="bg-sky-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">+ Tambah Gambar</a>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -102,7 +102,7 @@ if (!isset($_SESSION['username'])) {
 </div>
 
 <!-- Footer -->
-<footer class="bg-blue-800 dark:bg-gray-800 text-white text-center py-4 mt-10">
+<footer class="bg-sky-800 dark:bg-gray-800 text-white text-center py-4 mt-10">
   &copy; <?php echo date('Y'); ?> | Created by Irfha Najla Qisti Asfia`u Romadlon
 </footer>
 

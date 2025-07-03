@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])) {
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen font-sans">
 
   <!-- Header -->
-  <header class="relative bg-blue-900 dark:bg-gray-800 text-white text-center py-6 shadow">
+  <header class="relative bg-purple-900 dark:bg-gray-800 text-white text-center py-6 shadow">
     <h1 class="text-3xl font-bold">// HALAMAN ADMIN //</h1>
     <button onclick="toggleDarkMode()" class="absolute right-6 top-6 text-white hover:scale-110 transition"
       title="Toggle Theme">
@@ -58,7 +58,7 @@ if (!isset($_SESSION['username'])) {
 
   <div class="flex max-w-7xl mx-auto mt-8 px-4 gap-6">
     <!-- Sidebar -->
-    <aside class="w-1/4 bg-white dark:bg-gray-800 rounded shadow p-6">
+    <aside class="w-1/4 bg-purple-400 dark:bg-gray-800 rounded shadow p-6">
       <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4 text-center">MENU</h2>
       <ul class="space-y-2 text-gray-700 dark:text-gray-200">
         <li><a href="beranda_admin.php" class="block hover:text-blue-500">Beranda</a></li>
@@ -72,16 +72,16 @@ if (!isset($_SESSION['username'])) {
     </aside>
 
     <!-- Main Content -->
-    <main class="w-3/4 bg-white dark:bg-gray-800 rounded shadow p-6">
+    <main class="w-3/4 bg-purple-400 dark:bg-gray-800 rounded shadow p-6">
       <div class="flex justify-between items-center mb-6">
         <h2 class="text-xl font-bold text-gray-800 dark:text-white">Daftar Artikel</h2>
-        <a href="add_artikel.php" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">+ Tambah
+        <a href="add_artikel.php" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">+ Tambah
           Artikel</a>
       </div>
 
       <div class="overflow-auto rounded shadow border border-gray-300 dark:border-gray-700">
         <table class="min-w-full text-sm text-left">
-          <thead class="bg-blue-600 text-white">
+          <thead class="bg-purple-600 text-white">
             <tr>
               <th class="p-3 border">No</th>
               <th class="p-3 border">Nama Artikel</th>
@@ -129,7 +129,7 @@ if (!isset($_SESSION['username'])) {
   </div>
 
   <!-- Footer -->
-  <footer class="bg-blue-800 dark:bg-gray-800 text-white text-center py-4 mt-10 shadow-inner">
+  <footer class="bg-purple-800 dark:bg-gray-800 text-white text-center py-4 mt-10 shadow-inner">
     &copy; <?php echo date('Y'); ?> | Created by Irfha Najla Qisti Asfia`u Romadlon
   </footer>
 

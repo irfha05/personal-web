@@ -56,7 +56,7 @@ if (!isset($_SESSION['username'])) {
 
 <div class="flex max-w-7xl mx-auto mt-8 px-4 gap-6">
   <!-- Sidebar -->
-  <aside class="w-1/4 bg-white dark:bg-gray-800 rounded shadow p-6">
+  <aside class="w-1/4 bg-blue-300 dark:bg-gray-800 rounded shadow p-6">
     <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4 text-center">MENU</h2>
     <ul class="space-y-2 text-gray-700 dark:text-gray-200">
       <li><a href="beranda_admin.php" class="block hover:text-blue-500">Beranda</a></li>
@@ -71,7 +71,7 @@ if (!isset($_SESSION['username'])) {
   </aside>
 
   <!-- Main Content -->
-  <main class="w-3/4 bg-white dark:bg-gray-800 rounded shadow p-6">
+  <main class="w-3/4 bg-blue-300 dark:bg-gray-800 rounded shadow p-6">
     <div class="flex justify-between items-center mb-6">
       <h2 class="text-xl font-bold text-gray-800 dark:text-white">Tentang Saya</h2>
       <a href="add_about.php" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">+ Tambah Data</a>

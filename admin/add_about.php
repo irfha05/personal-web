@@ -56,8 +56,8 @@ if (!isset($_SESSION['username'])) {
 
 <div class="flex max-w-7xl mx-auto mt-8 px-4 gap-6">
   <!-- Sidebar -->
-  <aside class="w-1/4 bg-white dark:bg-gray-800 rounded shadow p-6">
-    <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4 text-center">MENU</h2>
+  <aside class="w-1/4 bg-blue-300 dark:bg-gray-800 rounded shadow p-6">
+    <h2 class="text-xl font-semibold text-red-700 dark:text-blue-400 mb-4 text-center">MENU</h2>
     <ul class="space-y-2 text-gray-700 dark:text-gray-200">
       <li><a href="beranda_admin.php" class="block hover:text-blue-500">Beranda</a></li>
       <li><a href="data_artikel.php" class="block hover:text-blue-500">Kelola Artikel</a></li>
@@ -71,7 +71,7 @@ if (!isset($_SESSION['username'])) {
   </aside>
 
   <!-- Main Content -->
-  <main class="w-3/4 bg-white dark:bg-gray-800 rounded shadow p-6">
+  <main class="w-3/4 bg-blue-300 dark:bg-gray-800 rounded shadow p-6">
     <form action="proses_add_about.php" method="post" class="space-y-6">
       <div>
         <label for="about" class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">About</label>
@@ -79,7 +79,7 @@ if (!isset($_SESSION['username'])) {
           class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-500 dark:bg-gray-900 dark:text-white dark:border-gray-700"></textarea>
       </div>
       <div class="flex justify-end space-x-4">
-        <button type="submit" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition">Simpan</button>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-800 transition">Simpan</button>
         <a href="about.php" class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-100 px-4 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-600 transition">Batal</a>
       </div>
     </form>
