@@ -57,7 +57,7 @@ $data = mysqli_fetch_array($query);
 
 <div class="flex max-w-7xl mx-auto mt-8 px-4 gap-6">
   <!-- Sidebar -->
-  <aside class="w-1/4 bg-white dark:bg-gray-800 rounded shadow p-6">
+  <aside class="w-1/4 bg-blue-300 dark:bg-gray-800 rounded shadow p-6">
     <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4 text-center">MENU</h2>
     <ul class="space-y-2 text-gray-700 dark:text-gray-200">
       <li><a href="beranda_admin.php" class="block hover:text-blue-500">Beranda</a></li>
@@ -72,7 +72,7 @@ $data = mysqli_fetch_array($query);
   </aside>
 
   <!-- Main Content -->
-  <main class="w-3/4 bg-white dark:bg-gray-800 rounded shadow p-6">
+  <main class="w-3/4 bg-blue-300 dark:bg-gray-800 rounded shadow p-6">
     <form action="proses_edit_gallery.php" method="post" enctype="multipart/form-data" class="space-y-6">
       <input type="hidden" name="id_gallery" value="<?php echo $data['id_gallery']; ?>">
       <div>

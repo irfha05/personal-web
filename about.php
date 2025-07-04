@@ -67,7 +67,7 @@
 
         <!-- Profile Section -->
         <div class="flex flex-col md:flex-row items-center gap-6 mb-6">
-            <img src="images/1.jpeg" alt="Foto Profil" class="w-40 h-40 rounded-full object-cover shadow-lg">
+            <img src="images/fto 2.jpg" alt="Foto Profil" class="w-40 h-40 rounded-full object-cover shadow-lg">
             <div class="text-gray-700 dark:text-gray-200 text-justify">
                 <?php
                 $sql = "SELECT * FROM tbl_about ORDER BY id_about DESC LIMIT 1";

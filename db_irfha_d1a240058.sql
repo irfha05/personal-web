@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Jul 2025 pada 18.53
+-- Waktu pembuatan: 03 Jul 2025 pada 10.24
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -37,7 +37,7 @@ CREATE TABLE `tbl_about` (
 --
 
 INSERT INTO `tbl_about` (`id_about`, `about`) VALUES
-(2, 'aku sayang kamu');
+(3, 'Saya Irfha Najla Qisti Asfia\'u Romadlon, seorang mahasiswa Ilmu Komputer yang memiliki ketertarikan besar dalam pengembangan perangkat lunak, analisis data, dan teknologi berbasis kecerdasan buatan. Saya percaya bahwa teknologi bukan hanya alat, tetapi juga solusi yang mampu membawa perubahan nyata dalam kehidupan masyarakat.\r\n\r\nSelama menempuh pendidikan, saya aktif mengembangkan keterampilan di bidang pemrograman, pengolahan data, dan pengembangan web. Saya terbiasa bekerja secara kolaboratif dalam tim maupun secara mandiri, dengan fokus pada efisiensi, akurasi, dan inovasi.\r\n\r\nSaya memiliki semangat belajar yang tinggi, selalu antusias untuk mengeksplorasi teknologi terbaru, serta berkomitmen untuk terus berkembang sebagai profesional di bidang teknologi informasi. Portofolio ini adalah cerminan dari proses belajar, pencapaian, dan proyek-proyek yang saya bangun sebagai bagian dari perjalanan akademik dan profesional saya.\r\n\r\n');
 
 -- --------------------------------------------------------
 
@@ -60,7 +60,7 @@ CREATE TABLE `tbl_artikel` (
 --
 
 INSERT INTO `tbl_artikel` (`id_artikel`, `nama_artikel`, `isi_artikel`, `gambar_artikel`, `nama_penulis`, `tanggal_publish`, `tag_artikel`) VALUES
-(3, 'Aku sayang kamu', 'aku sayang kamu', '686412883e670_WhatsApp Image 2025-06-27 at 03.22.05.jpeg', 'Irfha', '2025-07-01', 'pendidikan');
+(8, 'Robot: Teknologi Masa Depan yang Telah Hadir Saat Ini', 'Di era revolusi industri 4.0, robot bukan lagi sekadar fiksi ilmiah. Mereka telah menjadi bagian nyata dari kehidupan manusia, hadir di berbagai sektor mulai dari industri manufaktur hingga pelayanan kesehatan, bahkan merambah ke dalam kehidupan rumah tangga. Robot adalah perangkat mekanik atau virtual yang mampu melakukan tugas secara otomatis, baik dengan bimbingan manusia maupun sepenuhnya mandiri melalui sistem kecerdasan buatan.\r\n\r\nApa Itu Robot?\r\nSecara umum, robot adalah sistem elektromekanik yang dapat menerima perintah, memproses informasi, dan melakukan aksi tertentu. Robot dapat berupa lengan mekanik di pabrik, kendaraan otonom, hingga robot sosial yang dirancang untuk berinteraksi dengan manusia.\r\n\r\nSejarah Singkat Robot\r\nKonsep robot telah ada sejak ribuan tahun lalu, dimulai dari otomata (mesin bergerak otomatis) pada zaman Yunani kuno. Namun, istilah \"robot\" baru diperkenalkan oleh penulis Ceko, Karel Čapek, pada tahun 1920 dalam drama berjudul R.U.R. (Rossum’s Universal Robots). Sejak saat itu, perkembangan robot semakin pesat, terlebih dengan kemajuan teknologi digital dan kecerdasan buatan.\r\n\r\nJenis-Jenis Robot\r\nRobot Industri\r\nDigunakan di pabrik untuk proses produksi seperti pengelasan, perakitan, dan pengecatan.\r\n\r\nRobot Medis\r\nMembantu dalam prosedur bedah presisi tinggi atau sebagai alat rehabilitasi pasien.\r\n\r\nRobot Militer dan Penyelamatan\r\nDidesain untuk menjelajah daerah berbahaya, mendeteksi bahan peledak, atau menyelamatkan korban bencana.\r\n\r\nRobot Pelayanan dan Rumah Tangga\r\nContohnya adalah robot vacuum cleaner atau robot pelayan di restoran.\r\n\r\nRobot Sosial dan Edukasi\r\nDigunakan sebagai media pembelajaran atau teman interaktif bagi anak-anak dan lansia.\r\n\r\nKecerdasan Buatan dan Robotika\r\nIntegrasi AI (Artificial Intelligence) menjadikan robot semakin canggih. Robot kini mampu belajar dari lingkungan, mengenali suara dan wajah, bahkan membuat keputusan secara mandiri. Contohnya adalah robot Sophia dari Hanson Robotics yang dapat berinteraksi seperti manusia.', '6864e8ed44e4b_Midjourney_  Friendly, futuristic robot with gifts and online shopping icons_.jpeg', 'Irfha Najla Qisti A.R', '2025-07-02', 'Teknologi');
 
 -- --------------------------------------------------------
 
@@ -79,11 +79,12 @@ CREATE TABLE `tbl_gallery` (
 --
 
 INSERT INTO `tbl_gallery` (`id_gallery`, `judul`, `foto`) VALUES
-(7, 'Irfha', '1.jpeg'),
-(8, 'Irfha', '2.jpeg'),
-(9, 'Irfha', '3.jpeg'),
-(10, 'Irfha', '4.jpeg'),
-(11, 'Irfha', '5.jpeg');
+(9, 'Mpa', '3.jpeg'),
+(12, 'Birthday Mom', 'fto 4.jpg'),
+(13, 'Cottage Friends', 'fto 1.jpg'),
+(14, 'College Friends', 'fto 3.jpg'),
+(15, 'Mpa', 'fto 2.jpg'),
+(16, 'Mpa', 'Gambar WhatsApp 2025-06-05 pukul 22.25.12_6f20c363.jpg');
 
 -- --------------------------------------------------------
 
@@ -98,14 +99,6 @@ CREATE TABLE `tbl_komentar` (
   `isi_komentar` text DEFAULT NULL,
   `tanggal_komentar` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `tbl_komentar`
---
-
-INSERT INTO `tbl_komentar` (`id_komentar`, `id_artikel`, `nama_komentator`, `isi_komentar`, `tanggal_komentar`) VALUES
-(1, 3, 'Iqbal', 'hai\r\n', '2025-06-30 15:17:44'),
-(2, 3, 'Irfha', 'hai juga\r\n', '2025-06-30 15:19:46');
 
 -- --------------------------------------------------------
 
@@ -126,7 +119,9 @@ CREATE TABLE `tbl_pengunjung` (
 INSERT INTO `tbl_pengunjung` (`id`, `tanggal`, `jumlah`) VALUES
 (1, '2025-06-29', 17),
 (2, '2025-06-30', 1),
-(3, '2025-07-01', 6);
+(3, '2025-07-01', 6),
+(4, '2025-07-02', 14),
+(5, '2025-07-03', 25);
 
 -- --------------------------------------------------------
 
@@ -196,31 +191,31 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT untuk tabel `tbl_about`
 --
 ALTER TABLE `tbl_about`
-  MODIFY `id_about` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_about` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_artikel`
 --
 ALTER TABLE `tbl_artikel`
-  MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_gallery`
 --
 ALTER TABLE `tbl_gallery`
-  MODIFY `id_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_komentar`
 --
 ALTER TABLE `tbl_komentar`
-  MODIFY `id_komentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_komentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_pengunjung`
 --
 ALTER TABLE `tbl_pengunjung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_user`

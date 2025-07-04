@@ -42,7 +42,7 @@ $data = mysqli_fetch_array($query);
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen font-sans">
 
   <!-- Header -->
-  <header class="relative bg-blue-900 dark:bg-gray-800 text-white text-center py-6 shadow">
+  <header class="relative bg-purple-900 dark:bg-gray-800 text-white text-center py-6 shadow">
     <h1 class="text-3xl font-bold">Edit Artikel</h1>
     <button onclick="toggleDarkMode()" class="absolute right-6 top-6 hover:scale-110 transition" title="Toggle Theme">
       <!-- Moon Icon -->
@@ -59,7 +59,7 @@ $data = mysqli_fetch_array($query);
 
   <div class="flex max-w-7xl mx-auto mt-8 px-4 gap-6">
     <!-- Sidebar -->
-    <aside class="w-1/4 bg-white dark:bg-gray-800 rounded shadow p-6">
+    <aside class="w-1/4 bg-purple-400 dark:bg-gray-800 rounded shadow p-6">
       <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4 text-center">MENU</h2>
       <ul class="space-y-2 text-gray-700 dark:text-gray-200">
         <li><a href="beranda_admin.php" class="block hover:text-blue-500">Beranda</a></li>
@@ -75,7 +75,7 @@ $data = mysqli_fetch_array($query);
     </aside>
 
     <!-- Main Content -->
-    <main class="w-3/4 bg-white dark:bg-gray-800 rounded shadow p-6">
+    <main class="w-3/4 bg-purple-400 dark:bg-gray-800 rounded shadow p-6">
       <form action="proses_edit_artikel.php" method="post" enctype="multipart/form-data" class="space-y-6">
         <input type="hidden" name="id_artikel" value="<?php echo $data['id_artikel']; ?>">
 
@@ -140,7 +140,7 @@ $data = mysqli_fetch_array($query);
   </div>
 
   <!-- Footer -->
-  <footer class="bg-blue-800 dark:bg-gray-800 text-white text-center py-4 mt-10">
+  <footer class="bg-purple-800 dark:bg-gray-800 text-white text-center py-4 mt-10">
     &copy; <?php echo date('Y'); ?> | Created by Irfha Najla Qisti Asfia`u Romadlon
   </footer>
 
