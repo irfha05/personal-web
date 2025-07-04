@@ -90,7 +90,7 @@ Selamat datang di **Personal Web & Admin Dashboard**, sebuah website multifungsi
 ## 🚀 Cara Install
 
 1. Clone atau upload ke hosting Anda.
-2. Import database `db_blog.sql` via phpMyAdmin.
+2. Import database `db_irfha_d1a2400xx.sql` via phpMyAdmin.
 3. Cek dan sesuaikan `koneksi.php` untuk koneksi database.
 4. Akses `admin/login.php` untuk login ke admin panel.
 
